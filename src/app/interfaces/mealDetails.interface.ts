@@ -5,7 +5,7 @@ export interface mealDetailsResponse {
   export interface MealDetails{
     idMeal: string
     strMeal: string
-    strMealAlternate: known
+    strMealAlternate: string | null
     strCategory: string
     strArea: string
     strInstructions: string
@@ -27,11 +27,11 @@ export interface mealDetailsResponse {
     strIngredient13: string
     strIngredient14: string
     strIngredient15: string
-    strIngredient16: known
-    strIngredient17: known
-    strIngredient18: known
-    strIngredient19: known
-    strIngredient20: known
+    strIngredient16: string|null
+    strIngredient17: string|null
+    strIngredient18: string|null
+    strIngredient19: string|null
+    strIngredient20: string|null
     strMeasure1: string
     strMeasure2: string
     strMeasure3: string
@@ -47,14 +47,14 @@ export interface mealDetailsResponse {
     strMeasure13: string
     strMeasure14: string
     strMeasure15: string
-    strMeasure16: known
-    strMeasure17: known
-    strMeasure18: known
-    strMeasure19: known
-    strMeasure20: known
-    strSource: known
-    strImageSource: known
-    strCreativeCommonsConfirmed: known
-    dateModified: known
+    strMeasure16: string|null
+    strMeasure17: string|null
+    strMeasure18: string|null
+    strMeasure19: string|null
+    strMeasure20: string|null
+    strSource: string|null
+    strImageSource: string|null
+    strCreativeCommonsConfirmed: string|null
+    dateModified: string|null
   }
   
