@@ -3,6 +3,7 @@ import { Pacifico } from "next/font/google";
 import "./globals.css";
 import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
 import { AppSidebar } from "./_components/Sidebar";
+import Footer from "./_components/Footer";
 
 
 
@@ -29,12 +30,16 @@ export default function RootLayout({
           <body className={`flex min-h-screen bg-[#f7f6f2] ${pacifico.className} `}>
           <SidebarProvider>
           <AppSidebar />
-       <main className="flex-1 p-6">
+       <div className="flex flex-col">
+       <main className="flex-1  p-6">
        <SidebarTrigger/>
 
 {children}
        </main>
+       <Footer/>
+       </div>
        </SidebarProvider>
+
         </body>
     
 
