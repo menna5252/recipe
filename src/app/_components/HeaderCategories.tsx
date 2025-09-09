@@ -22,8 +22,14 @@ export default function HeaderCategories({categories}:{categories:Category[]}) {
       {categories.map((cat) => (
         <button onClick={()=>setActiveCategory(cat.strCategory)} key={cat.idCategory}>
 
-          <div className="font-cursive text-center hover:bg-white  break-words px-4 py-2 rounded-2xl   shadow-lg hover:shadow-xl transition-shadow duration-300">
-          {cat.strCategory}
+<div
+        className={`font-cursive text-center break-words px-4 py-2 rounded-2xl shadow-lg transition-all duration-300
+          ${
+            activeCategory === cat.strCategory
+              ? "bg-gradient-to-r from-[#f29625] to-[#e17965] text-white shadow-xl"
+              : "hover:bg-white hover:shadow-xl"
+          }`}
+      >          {cat.strCategory}
               </div>
         </button>
       ))}

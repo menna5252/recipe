@@ -6,6 +6,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import Link from "next/link";
 import Image from "next/image";
 import { SkeletonCard } from "../shared/Skelton";
+import { Globe } from "lucide-react";
 
 export default function MealsCategory({ category }: { category: string }) {
   const [meals, setMeals] = useState<Meal[]>([]);
@@ -36,24 +37,31 @@ if (loading) {
     );
   }
   return (
-    <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-6 font-cursive">
+    <div className="grid grid-cols-2 md:grid-cols-4 items-stretch gap-4 gap-y-18 mt-18 font-cursive">
      {meals?.length > 0 && meals.map((meal) => (
-        <Link key={meal.idMeal} href={`/meal/${meal.idMeal}`}>
-          <Card className="hover:shadow-md transition">
-            <CardHeader>
-              <CardTitle className="text-sm">{meal.strMeal}</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <Image
-                src={meal.strMealThumb}
-                alt={meal.strMeal}
-                width={400}
-                height={300}
-                className="rounded-md w-full h-auto"
-              />
-            </CardContent>
-          </Card>
+          <Card  key={meal.idMeal} className="group relative flex flex-col items-center  rounded-3xl shadow-md hover:shadow-lg transition">
+      <div className="absolute -top-12 mb-4 group-hover:rotate-360 transition duration-500">
+        <Image
+          src={meal.strMealThumb}
+          alt={meal.strMeal}
+          width={140}
+          height={140}
+          className="rounded-full object-cover border-4 border-white shadow-md"
+        />
+      </div>
+
+      <CardContent className="mt-25 text-center">
+        <h2 className="text-lg font-bold line-clamp-1">{meal.strMeal}</h2>
+
+       
+
+        <Link href={`/meal/${meal.idMeal}`}>
+          <button className="mt-4 bg-green-500 hover:bg-green-600 text-white font-medium px-6 py-2 rounded-full transition">
+            View Recipe
+          </button>
         </Link>
+      </CardContent>
+    </Card>
       ))}
     </div>
   );
