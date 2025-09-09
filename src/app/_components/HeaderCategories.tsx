@@ -9,7 +9,6 @@ import {
     SelectValue,
   } from "@/components/ui/select"
 import MealsCategory from './MealsCategory';
-import Link from 'next/link';
 
 export default function HeaderCategories({categories}:{categories:Category[]}) {
     const [activeCategory, setActiveCategory] = useState<string>(

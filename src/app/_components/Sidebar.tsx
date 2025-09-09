@@ -1,12 +1,11 @@
 
-import { Calendar, FolderKanban, ForkKnife, ForkKnifeCrossed, Home, Inbox, LucideForkKnifeCrossed, Search, Settings } from "lucide-react"
+import {  ForkKnife } from "lucide-react"
 
 import {
   Sidebar,
   SidebarContent,
   SidebarGroup,
   SidebarGroupContent,
-  SidebarGroupLabel,
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
